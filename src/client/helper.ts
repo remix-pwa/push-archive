@@ -2,6 +2,9 @@
  * @fileoverview A set of helper functions used across the `client` sub-module
  */
 
+/**
+ * A custom posting function to post data to the server.
+ */
 export async function postToServer(url: string, data: any): Promise<Response> {
   let response = await fetch(url, {
     method: 'POST',
