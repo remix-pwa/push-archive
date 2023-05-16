@@ -1,6 +1,6 @@
 {
-  "name": "push",
-  "version": "1.0.0",
+  "name": "@remix-pwa/push",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
