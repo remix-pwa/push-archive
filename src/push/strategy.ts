@@ -20,4 +20,10 @@ export abstract class Push {
   }
 
   abstract handlePush(event: PushEvent): Promise<void>;
+
+  abstract handleNotificationClick(event: NotificationEvent): Promise<void>;
+
+  abstract handleNotificationClose(event: NotificationEvent): Promise<void>;
+
+  abstract handleError(error: ErrorEvent): Promise<void>;
 }
