@@ -22,6 +22,9 @@ export interface PushHandlerEnv {
   state?: Record<string, any>;
 }
 
+/**
+ * 
+ */
 export interface PushHandlerPlugin {
   pushReceived?(event: PushHandlerEnv): Promise<void>;
   pushClicked?(event: PushHandlerEnv): Promise<void>;
