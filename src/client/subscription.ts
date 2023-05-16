@@ -1,6 +1,8 @@
 import { urlB64ToUint8Array, postToServer } from "./helper";
 
-export async function subscribeToPush(VAPID_PUBLIC_KEY: string) {
+// create a string type that must begin with a '/' 
+
+export async function subscribeToPush(VAPID_PUBLIC_KEY: string, pushRoute: string) {
   const registration = await navigator.serviceWorker.getRegistration();
   const subscription = await registration?.pushManager.subscribe({
     userVisibleOnly: true,
