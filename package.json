@@ -1,17 +1,16 @@
 {
   "name": "@remix-pwa/push",
   "version": "0.0.1",
-  "description": "",
+  "description": "A Remix PWA package to integrate push notifications into your application!",
   "homepage": "https://remix-pwa-docs.vercel.app/push",
   "main": "./lib/index.js",
-  "bin": "./exec.js",
   "types": "./types/index.d.ts",
   "files": [
     "lib",
     "types"
   ],
   "scripts": {
-    "build": "npm run clean && npm run copy && tsc",
+    "build": "npm run clean && tsc",
     "clean": "rimraf lib types",
     "copy": "",
     "format": "prettier --write ./src",
