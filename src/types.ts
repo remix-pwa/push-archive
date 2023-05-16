@@ -3,19 +3,19 @@
  */
 
 /**
- * 
+ *
  */
 export type VapidDetails = {
-  publicKey: string,
-  privateKey: string,
-  subject: string,
+  publicKey: string;
+  privateKey: string;
+  subject: string;
 };
 
 export interface NotificationObjectOptions extends NotificationOptions {
-  body: string
+  body: string;
 }
 
 export type NotificationObject = {
   title: string;
-  options: NotificationObjectOptions
-}
+  options: NotificationObjectOptions;
+};
