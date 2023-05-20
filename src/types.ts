@@ -32,4 +32,4 @@ export interface PushHandlerPlugin {
   error?(error: PushHandlerEnv): Promise<void>;
 }
 
-export type PushType = "subscribe" | "unsubscribe"
+export type PushType = "subscribe" | "unsubscribe" | string;
