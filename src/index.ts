@@ -1,5 +1,6 @@
 // client
 export { subscribeToPush, unsubscribeFromPush } from './client/subscription';
+export type { PushRoute } from './client/subscription';
 
 // push 
 export { Push } from './push/strategy'
@@ -9,4 +10,4 @@ export { sendNotifications } from './server/server';
 export type { sendNotificationParams } from './server/server';
 
 // types
-export type { NotificationObject, VapidDetails, PushHandlerEnv, PushHandlerPlugin } from './types';
+export type { NotificationObject, VapidDetails, PushHandlerEnv, PushHandlerPlugin, PushType } from './types';
