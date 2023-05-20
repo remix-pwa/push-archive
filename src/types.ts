@@ -31,3 +31,5 @@ export interface PushHandlerPlugin {
   pushDismissed?(event: PushHandlerEnv): Promise<void>;
   error?(error: PushHandlerEnv): Promise<void>;
 }
+
+export type PushType = "subscribe" | "unsubscribe"
