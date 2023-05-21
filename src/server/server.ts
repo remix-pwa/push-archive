@@ -1,5 +1,4 @@
 import { NotificationObject, VapidDetails } from '../types';
-const webpush = require('web-push');
 
 export type sendNotificationParams = {
   subscriptions: PushSubscription[];
@@ -25,7 +24,7 @@ export const sendNotifications = ({
   subscriptions.forEach((subscription) => {
     const endpoint = subscription.endpoint;
     const id = endpoint.substr(endpoint.length - 8, endpoint.length);
-    webpush
+    require('web-push')
       .sendNotification(subscription, JSON.stringify(notification), options)
       .then((result: { statusCode: any }) => {
         console.log(`Endpoint ID: ${id}`);
