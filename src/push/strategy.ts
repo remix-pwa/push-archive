@@ -1,14 +1,14 @@
-import { PushHandlerPlugin, PushHandlerEnv } from "../types";
+import { PushPlugin, PushHandlerEnv } from "../types";
 
 export abstract class Push {
-  protected plugins: PushHandlerPlugin[];
+  protected plugins: PushPlugin[];
 
-  constructor(plugins: PushHandlerPlugin[] = []) {
+  constructor(plugins: PushPlugin[] = []) {
     this.plugins = plugins;
   }
 
   protected async applyPlugins(
-    pluginMethod: keyof PushHandlerPlugin,
+    pluginMethod: keyof PushPlugin,
     args: PushHandlerEnv
   ) {
     const promises = this.plugins.map(async (plugin) => {

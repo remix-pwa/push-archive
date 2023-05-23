@@ -10,4 +10,4 @@ export { sendNotifications } from './server/server';
 export type { sendNotificationParams } from './server/server';
 
 // types
-export type { NotificationObject, VapidDetails, PushHandlerEnv, PushHandlerPlugin, PushType } from './types';
+export type { NotificationObject, VapidDetails, PushHandlerEnv, PushPlugin, PushType } from './types';
