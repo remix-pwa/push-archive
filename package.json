@@ -42,7 +42,9 @@
     "remix-run",
     "pwa",
     "remix-pwa",
-    "@remix-pwa"
+    "@remix-pwa",
+    "push",
+    "@remix-pwa/push"
   ],
   "dependencies": {
     "dotenv": "^16.0.3",
