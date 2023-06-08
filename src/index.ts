@@ -1,5 +1,5 @@
 // client
-export { subscribeToPush, unsubscribeFromPush } from './client/subscription';
+export { subscribeToPush, unsubscribeFromPush, getPushSubscriptionStatus } from './client/subscription';
 export type { PushRoute } from './client/subscription';
 
 // push 
