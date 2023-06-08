@@ -7,10 +7,12 @@ export type PushRoute = `/${string}`;
  * 
  * @param {string} PUBLIC_KEY - Your VAPID public key 
  * @param {PushRoute} pushRoute - The route where push subscriptions are handled. *Must begin with a '/'*
+ * @param {string} type - The `type` you want passed to the server for the subscribe action
  */
 export async function subscribeToPush(
   PUBLIC_KEY: string,
-  pushRoute: PushRoute = '/push'
+  pushRoute: PushRoute = '/push',
+  type = 'subscribe'
 ) {
   const registration = await navigator.serviceWorker.getRegistration();
   const subscription = await registration?.pushManager.subscribe({
@@ -18,7 +20,7 @@ export async function subscribeToPush(
     applicationServerKey: urlB64ToUint8Array(PUBLIC_KEY)
   });
 
-  const data = await postToServer(pushRoute, { subscription, type: 'subscribe' });
+  const data = await postToServer(pushRoute, { subscription, type });
   return data;
 }
 
@@ -26,8 +28,9 @@ export async function subscribeToPush(
  * Unsubscribe from push notifications 
  * 
  * @param {string} pushRoute - The route where push subscriptions are handled. *Must begin with a '/'*
+ * @param {string} type - The `type` you want passed to the server for the subscribe action
  */
-export async function unsubscribeFromPush(pushRoute: string = '/push'): Promise<boolean> {
+export async function unsubscribeFromPush(pushRoute: string = '/push', type = 'unsubscribe'): Promise<boolean> {
   const registration = await navigator.serviceWorker.getRegistration();
   const subscription = await registration?.pushManager.getSubscription();
   
@@ -37,7 +40,7 @@ export async function unsubscribeFromPush(pushRoute: string = '/push'): Promise<
 
   postToServer(pushRoute, {
     endpoint: subscription,
-    type: 'unsubscribe'
+    type
   });
 
   return await subscription?.unsubscribe();
