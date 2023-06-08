@@ -45,3 +45,17 @@ export async function unsubscribeFromPush(pushRoute: string = '/push', type = 'u
 
   return await subscription?.unsubscribe();
 }
+
+/**
+ * Get the current push subscription status
+ */
+export async function getPushSubscriptionStatus(): Promise<boolean> {
+  const registration = await navigator.serviceWorker.getRegistration();
+  const subscription = await registration?.pushManager.getSubscription();
+
+  if (!subscription) {
+    return false;
+  }
+
+  return true;
+}
