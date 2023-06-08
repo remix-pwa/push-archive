@@ -39,7 +39,7 @@ export async function unsubscribeFromPush(pushRoute: string = '/push', type = 'u
   }
 
   postToServer(pushRoute, {
-    endpoint: subscription,
+    subscription,
     type
   });
 
