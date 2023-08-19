@@ -7,12 +7,19 @@
     "type": "git",
     "url": "https://github.com/remix-pwa/push"
   },
-  "main": "./lib/index.js",
-  "types": "./types/index.d.ts",
+  "main": "./lib/server.js",
+  "browser": "./lib/browser.js",
+  "types": "./types/types.d.ts",
   "files": [
     "lib",
     "types"
   ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "node": "./lib/server.js"
+    }
+  },
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf lib types",
