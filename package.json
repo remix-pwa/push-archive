@@ -8,6 +8,10 @@
     "url": "https://github.com/remix-pwa/push"
   },
   "main": "./lib/index.js",
+  "exports": {
+    ".": "./src/index.ts",
+    "./worker": "./src/worker/index.ts"
+  },
   "types": "./types/index.d.ts",
   "files": [
     "lib",
