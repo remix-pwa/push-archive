@@ -1,4 +1,4 @@
-import { PushPlugin, PushHandlerEnv } from "../types";
+import { PushPlugin, PushHandlerEnv } from './types';
 
 export abstract class Push {
   protected plugins: PushPlugin[];

@@ -1,2 +1,1 @@
-export { sendNotifications } from './server/server';
-export type { sendNotificationParams } from './server/server';
+export * from './server/send-notifications';
