@@ -9,8 +9,8 @@
   },
   "main": "./lib/index.js",
   "exports": {
-    ".": "./src/index.ts",
-    "./worker": "./src/worker/index.ts"
+    ".": "./lib/index.js",
+    "./worker": "./lib/worker/index.js"
   },
   "types": "./types/index.d.ts",
   "files": [
