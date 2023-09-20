@@ -9,10 +9,15 @@
   },
   "main": "./lib/index.js",
   "exports": {
-    ".": "./lib/index.js",
-    "./worker": "./lib/worker/index.js"
+    ".": {
+      "default": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./worker": {
+      "default": "./lib/worker/index.js",
+      "types": "./types/worker/index.d.ts"
+    }
   },
-  "types": "./types/index.d.ts",
   "files": [
     "lib",
     "types"
