@@ -7,19 +7,12 @@
     "type": "git",
     "url": "https://github.com/remix-pwa/push"
   },
-  "main": "./lib/server.js",
-  "browser": "./lib/browser.js",
-  "types": "./types/types.d.ts",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
   "files": [
     "lib",
     "types"
   ],
-  "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "node": "./lib/server.js"
-    }
-  },
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf lib types",
@@ -28,9 +21,9 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "@remix-pwa/sw": "^1.0.0",
-    "@remix-run/dev": "^1.15.0",
-    "@remix-run/react": "^1.15.0",
+    "@remix-pwa/sw": "^1.0.0 || ^2.1.4",
+    "@remix-run/dev": "^1.15.0 || ^2.0.0",
+    "@remix-run/react": "^1.15.0 || ^2.0.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
