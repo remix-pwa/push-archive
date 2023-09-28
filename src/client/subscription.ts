@@ -67,3 +67,19 @@ export async function getPushSubscriptionStatus(): Promise<boolean> {
 
   return true;
 }
+
+/**
+ * Get the current push subscription data. In case you are already subscribed
+ * to push notifications, this will return the subscription data. Otherwise,
+ * it will return `null`.
+ */
+export async function getSubscriptionData(): Promise<PushSubscription | null> {
+  const registration = await navigator.serviceWorker.getRegistration();
+  const subscription = await registration?.pushManager.getSubscription();
+
+  if (!subscription) {
+    return null;
+  }
+
+  return subscription;
+}
